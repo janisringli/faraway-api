@@ -20,6 +20,12 @@
         "scared",
         "happy"
       ]
+    },
+    "responses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::response.response",
+      "mappedBy": "message"
     }
   }
 }

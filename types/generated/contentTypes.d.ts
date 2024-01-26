@@ -781,6 +781,11 @@ export interface ApiMessageMessage extends Schema.CollectionType {
   attributes: {
     message: Attribute.Text;
     category: Attribute.Enumeration<['scared', 'happy']>;
+    responses: Attribute.Relation<
+      'api::message.message',
+      'oneToMany',
+      'api::response.response'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -813,6 +818,11 @@ export interface ApiResponseResponse extends Schema.CollectionType {
   attributes: {
     messageNumber: Attribute.Integer;
     Date: Attribute.String;
+    message: Attribute.Relation<
+      'api::response.response',
+      'manyToOne',
+      'api::message.message'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

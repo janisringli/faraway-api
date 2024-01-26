@@ -17,6 +17,12 @@
     },
     "Date": {
       "type": "string"
+    },
+    "message": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::message.message",
+      "inversedBy": "responses"
     }
   }
 }
